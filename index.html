@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#170f2c">
+  <title>Маленький мир для тебя ♡</title>
+  <link rel="stylesheet" href="style.css">
+  <style>[hidden] { display: none !important; }</style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="brand"><span class="pixel-heart">♥</span> LOVE.EXE</div>
+    <button id="music-toggle" class="small-btn" type="button" aria-pressed="false">♫ Включить музыку</button>
+  </header>
+
+  <main class="shell">
+    <section id="screen-start" class="screen panel">
+      <div class="eyebrow">✦ СЕКРЕТНОЕ ПОСЛАНИЕ ✦</div>
+      <div class="hero-pixel" aria-hidden="true">
+        <div class="moon"></div><div class="pixel-heart big">♥</div>
+        <div class="tiny-star star-one">✦</div><div class="tiny-star star-two">✧</div>
+      </div>
+      <h1>Маленький мир<br><span>для тебя</span></h1>
+      <p class="intro">Я приготовила кое-что особенное.<br>Готов открыть мой маленький мир?</p>
+      <button class="primary-btn" id="begin-btn" type="button">НАЧАТЬ ИГРУ <span>▶</span></button>
+      <p class="micro">PLAYER 1: МОЙ ЛЮБИМЫЙ ЧЕЛОВЕК</p>
+    </section>
+
+    <section id="screen-password" class="screen panel hidden">
+      <div class="eyebrow">УРОВЕНЬ 01 / ПРОВЕРКА</div>
+      <div class="pixel-icon">🔐</div>
+      <h2>Пароль от моего сердца</h2>
+      <p>Введи нашу особенную дату в формате <code>ДД.ММ.ГГГГ</code>.</p>
+      <form id="password-form">
+        <label class="sr-only" for="password-input">Особенная дата</label>
+        <input id="password-input" inputmode="numeric" autocomplete="off" placeholder="ДД.ММ.ГГГГ" maxlength="10" required>
+        <button class="primary-btn" type="submit">ОТКРЫТЬ <span>♡</span></button>
+      </form>
+      <p id="password-error" class="error" role="status"></p>
+      <button class="text-btn back-btn" data-back="screen-start" type="button">← Назад</button>
+    </section>
+
+    <section id="screen-hub" class="screen panel hidden">
+      <div class="eyebrow">УРОВЕНЬ 02 / ТВОЙ МИР</div>
+      <h2>Ты прошёл! <span class="inline-heart">♥</span></h2>
+      <p class="intro">Здесь спрятаны кусочки моей любви к тебе.<br>Открывай их в любом порядке.</p>
+      <div class="progress-wrap"><div class="progress-label"><span>СОБРАНО СЕРДЕЧЕК</span><span id="progress-text">0 / 4</span></div><div class="progress-track"><div id="progress-bar"></div></div></div>
+      <div class="menu-grid">
+        <button class="tile" data-open="screen-memories" type="button"><span class="tile-icon">▧</span><b>НАШИ МОМЕНТЫ</b><small>Фотографии и воспоминания</small><span class="tile-arrow">↗</span></button>
+        <button class="tile" data-open="screen-quiz" type="button"><span class="tile-icon">?</span><b>МИНИ-ВИКТОРИНА</b><small>Проверим, как хорошо ты меня знаешь</small><span class="tile-arrow">↗</span></button>
+        <button class="tile" data-open="screen-gifts" type="button"><span class="tile-icon">▣</span><b>ПОДАРКИ</b><small>Маленькие сюрпризы для тебя</small><span class="tile-arrow">↗</span></button>
+        <button class="tile" data-open="screen-letter" type="button"><span class="tile-icon">✉</span><b>МОЁ ПИСЬМО</b><small>Самое важное — в конце</small><span class="tile-arrow">↗</span></button>
+      </div>
+      <p class="micro">СОВЕТ: ВКЛЮЧИ МУЗЫКУ В ПРАВОМ ВЕРХНЕМ УГЛУ ♫</p>
+    </section>
+
+    <section id="screen-memories" class="screen panel hidden">
+      <div class="eyebrow">ГАЛЕРЕЯ / SAVE FILE</div>
+      <h2>Наши моменты <span class="inline-heart">♥</span></h2>
+      <p>Несколько кадров из моей любимой истории.</p>
+      <div class="memory-grid">
+        <article class="memory-card"><img src="images/memory1.jpg" alt="я люблю тебя в любом мире, даже виртуальном" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="image-placeholder" hidden>♡<small>Добавь фото<br>memory1.jpg</small></div><div class="memory-caption"><b>МОМЕНТ №01</b><p>я надеюсь что во всех вселенных мы вместе.</p></div></article>
+        <article class="memory-card"><img src="images/memory2.jpg" alt="в тових глазах я готова тонуть" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="image-placeholder" hidden>✦<small>Добавь фото<br>memory2.jpg</small></div><div class="memory-caption"><b>МОМЕНТ №02</b><p>прекраснее твоих глаз я не видела ничего.</p></div></article>
+        <article class="memory-card"><img src="images/memory3.jpg" alt="твои поцелуи самое сладкое что я пробовала" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="image-placeholder" hidden>☾<small>Добавь фото<br>memory3.jpg</small></div><div class="memory-caption"><b>МОМЕНТ №03</b><p>Мой любимый кадр с тобой.</p></div></article>
+      </div>
+      <button class="primary-btn collect-btn" data-collect="memories" type="button">ЗАБРАТЬ СЕРДЕЧКО ♥</button>
+      <button class="text-btn back-btn" data-back="screen-hub" type="button">← В меню</button>
+    </section>
+
+    <section id="screen-quiz" class="screen panel hidden">
+      <div class="eyebrow">МИНИ-ИГРА / QUIZ</div>
+      <h2>Как хорошо ты меня знаешь?</h2>
+      <p id="quiz-counter">Вопрос 1 из 3</p>
+      <div class="quiz-box">
+        <h3 id="quiz-question">Какой наш момент я вспоминаю с улыбкой?</h3>
+        <div id="quiz-options" class="quiz-options"></div>
+        <p id="quiz-feedback" role="status"></p>
+      </div>
+      <button id="quiz-next" class="primary-btn" type="button" disabled>СЛЕДУЮЩИЙ ВОПРОС →</button>
+      <button class="text-btn back-btn" data-back="screen-hub" type="button">← В меню</button>
+    </section>
+
+    <section id="screen-gifts" class="screen panel hidden">
+      <div class="eyebrow">ИНВЕНТАРЬ / SURPRISES</div>
+      <h2>Твои маленькие подарки</h2>
+      <p>Нажми на каждый подарок, чтобы узнать, что внутри.</p>
+      <div class="gift-grid">
+        <button class="gift" data-gift="0" type="button"><span>🎁</span><b>ПОДАРОК №1</b><small>Не открыто</small></button>
+        <button class="gift" data-gift="1" type="button"><span>🎁</span><b>ПОДАРОК №2</b><small>Не открыто</small></button>
+        <button class="gift" data-gift="2" type="button"><span>🎁</span><b>ПОДАРОК №3</b><small>Не открыто</small></button>
+      </div>
+      <div id="gift-reveal" class="gift-reveal hidden" role="status"></div>
+      <button class="primary-btn collect-btn" data-collect="gifts" type="button">ЗАБРАТЬ СЕРДЕЧКО ♥</button>
+      <button class="text-btn back-btn" data-back="screen-hub" type="button">← В меню</button>
+    </section>
+
+    <section id="screen-letter" class="screen panel hidden">
+      <div class="eyebrow">СООБЩЕНИЕ ДЛЯ ТЕБЯ / 4EVER</div>
+      <div class="letter-stamp">♥</div>
+      <h2>Открой, когда будешь готов</h2>
+      <div class="letter-paper">
+        <p class="letter-greeting">Мой жаным,</p>
+        <p>Если ты читаешь это, значит, ты дошёл до самого важного уровня. Я хотела собрать здесь наши моменты и напомнить тебе, как много ты для меня значишь.</p>
+        <p>Мне нравится, что у нас есть своя маленькая история — со своими шутками, воспоминаниями и моментами, которые понятны только нам. Я хочу беречь всё хорошее, что между нами есть, и создавать с тобой ещё больше тёплых воспоминаний.</p>
+        <p>Спасибо, что ты есть в моей жизни. Надеюсь, эта маленькая игра заставила тебя улыбнуться хотя бы так же сильно, как ты заставляешь улыбаться меня.</p>
+        <p class="letter-sign">С любовью,<br><span>твоя девочка ♡</span></p>
+      </div>
+      <button class="primary-btn collect-btn" data-collect="letter" type="button">ЗАБРАТЬ СЕРДЕЧКО ♥</button>
+      <button class="text-btn back-btn" data-back="screen-hub" type="button">← В меню</button>
+    </section>
+
+    <section id="screen-finish" class="screen panel hidden">
+      <div class="eyebrow">ИГРА ПРОЙДЕНА / ENDING UNLOCKED</div>
+      <div class="hero-pixel finish-heart" aria-hidden="true">♥</div>
+      <h2>Ты — мой любимый сюжет</h2>
+      <p class="intro">Спасибо, что прошёл эту маленькую игру.<br>Но моя любимая история с тобой продолжается.</p>
+      <div class="final-note">┌─────────────────────────┐<br>　　Я ВЫБИРАЮ ТЕБЯ ♡<br>└─────────────────────────┘</div>
+      <button class="primary-btn" id="replay-btn" type="button">СЫГРАТЬ ЕЩЁ РАЗ ↻</button>
+      <button class="text-btn" id="hub-btn" type="button">← Вернуться в меню</button>
+    </section>
+  </main>
+
+  <footer>MADE WITH <span>♥</span> JUST FOR YOU · v1.0</footer>
+  <audio id="background-music" src="audio/our-song.mp3" loop preload="none"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
